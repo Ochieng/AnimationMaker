@@ -1,0 +1,80 @@
+body
+{
+    font-family : "メイリオ", sans-serif;
+}
+h1
+{
+    font-style : oblique;
+    font-size : x-large;
+}
+h2
+{
+    font-weight : bold;
+    font-size : large;
+    border-style : solid;
+    border-right-color : #D3D3D3;
+    border-width : 0px 6px 2px 0px;
+}
+h3
+{
+    font-weight : bold;
+    font-size : medium;
+    border-left-style : solid;
+    border-left-color : #D3D3D3;
+    border-left-width : 6px;
+}
+a
+{
+    color : Blue;
+}
+.copyright
+{
+    font-style : italic;
+    font-size : small;
+}
+#wrapper
+{
+    width : 960px;
+    margin : 0 auto;
+    padding : 0;
+}
+#main
+{
+    float : left;
+    width : 760px;
+}
+#sidelist
+{
+    float : right;
+    width : 120px;
+}
+table
+{
+    border-style : solid;
+    border-width : 1px;
+}
+table th
+{
+    border-style : solid;
+    border-width : 1px;
+}
+table td
+{
+    border-style : solid;
+    border-width : 1px;
+}
+hr
+{
+    border-bottom-style : solid;
+    border-bottom-width : 1px;
+}
+img
+{
+    width : 80%;
+    height : 80%;
+}
+span.attention
+{
+    color : Red;
+    font-weight :bold;
+}

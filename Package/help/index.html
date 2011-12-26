@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <link rel="Stylesheet" href="./page/config.css" type="text/css" />
+    <title>AnimationCreator ver 0.12 (bug exists) - Utility Document</title>
+</head>
+<body>
+    <div id="wrapper">
+        <h1>AnimationCreator ver 0.11 (bug exists) - Utility Document</h1>
+    
+        <!--このページのリスト-->
+        <ol id="sidelist">
+            <li><a href="#summry">はじめに</a></li>
+            <li><a href="#environment">動作環境</a></li>
+            <li><a href="#using">使用方法</a></li>
+            <li><a href="#license">利用ライセンス</a></li>
+            <li><a href="#immunity">免責事項</a></li>
+            <li><a href="#contact">連絡先</a></li>
+            <li><a href="#enbug">既知のバグ</a></li>
+            <li><a href="#xmlformat">[参考]XMLのフォーマット</a></li>
+        </ol>
+
+        <!--本文-->
+        <div id="main">
+            <!--サマリー-->
+            <h2 id="summry">1. はじめに</h2>
+            <p>
+            これは、画像やアニメーションを読み込むのが面倒なのでゲームアプリケーション本体で読み込むデータ
+            他のアプリケーションで作成し、読み込みは変換されたファイルで済ませ、ゲーム作成をすこしでも簡単にしようとした、
+            編集ツール及びそれを読み込むためのC++組み込み用ライブラリとなる予定です.
+            </p>
+
+            <!--編集ツールおよびランタイムライブラリの動作環境-->
+            <h2 id="environment">2. 動作環境</h2>
+            <p>編集ツール及びランタイムライブラリは以下の環境で製作されているため、ランタイムやライブラリのインストールが必要です.</p>
+            <h3>編集ツール</h3>
+            <ul>
+                <li>
+                <a href="http://www.microsoft.com/downloads/ja-jp/details.aspx?FamilyID=9cfb2d51-5ff4-4491-b0e5-b386f32c0992"
+                  onclick="window.open('http://www.microsoft.com/downloads/ja-jp/details.aspx?FamilyID=9cfb2d51-5ff4-4491-b0e5-b386f32c0992'); return false;">
+                .NET Framework 4.0</a>
+                </li>
+                <li>
+                <a href="http://slimdx.org/"
+                  onclick="window.open('http://slimdx.org/'); return false;">
+                SlimDX September 2011</a>
+                </li>
+            </ul>
+            <h3>C++組み込み用ランタイム</h3>
+            <ul>
+                <li>
+                <a href="http://www.boost.org/"
+                  onclick="window.open('http://www.boost.org/'); return false;">
+                Boost C++ Libraries ver 1.47.0
+                </a>
+                </li>
+                <li>
+                <a href="http://homepage2.nifty.com/natupaji/DxLib/"
+                  onclick="window.open('http://homepage2.nifty.com/natupaji/DxLib/'); return false;">
+                DXライブラリ ver 3.06c
+                </a>
+                </li>
+            </ul>
+            <p>上記をすべてインストールして実行できなかった、ビルドできなかった場合は<a href="#contact">ご連絡ください.</a></p>
+
+            <!--ツールとライブラリの使用方法-->
+            <h2 id="using">3. 使用方法</h2>
+            <p>
+            必ず、<a href="#environment">動作環境情報</a>に目を通し、全てインストールした状態であることを確認してください.<br />
+            </p>
+            <ol>
+                <li><a href="page/tool.html">編集ツール使用方法</a></li>
+                <li><a href="page/runtime.html">ランタイムライブラリ使用方法[現在作成中]</a></li>
+            </ol>
+
+            <!--ライセンス表記に関して-->
+            <h2 id="license">4. 利用ライセンス</h2>
+            <p>
+            現在のバージョンでは特に規定しておりません.<br />
+            東京工科大学公認サークル「クリエイティブスタッフ」内での理由はライセンスフリーでご利用ください.<br />
+            それ以外の利用に付きましては別途<a href="#contact">お問い合わせください.</a>
+            </p>
+
+            <!--免責事項-->
+            <h2 id="immunity">5. 免責事項</h2>
+            <p>編集ツール及びC++組み込み用ライブラリを利用した際の如何なるトラブルにおいても作者及び関係者は責任を負いません.</p>
+
+            <!--Twitter等連絡先の明記-->
+            <h2 id="contact">6. 連絡先</h2>
+            <p>
+            - krustf<br />
+            [Twitter] @krustf<br />
+            [E-Mail] krustf.cpp.u&lt;at&gt;gmail.com - &lt;at&gt;を@に置き換えてください.<br />
+            </p>
+
+            <!--発見されているが未修正のバグ-->
+            <h2 id="enbug">7. 既知のバグ</h2>
+            <p>
+            現在、3つが発見され、未修正か修正中です.<br />
+            </p>
+            <ol>
+                <li>フレーム間隔の変更や、アニメーションのグラフィックを選択時、未分割されたグラフィックが一瞬描画される.</li>
+                <li>登録済みリストのグラフィックを選択時、その前に選択された結果(パラメータ)が残ったままになり描画内容が狂うことがある.</li>
+            </ol>
+
+             <!--XMLフォーマット情報-->
+            <h2 id="xmlformat">[参考]XMLのフォーマット</h2>
+            <p>
+            このライブラリでは編集ツールと組み込みランタイムの連携にXMLフォーマットを使ってデータのやりとりを行っています.
+            参考として、XMLのフォーマットを記述します.
+            </p>
+            <table id="xmlformattable">
+                <caption>XMLフォーマット表</caption>
+                <tr><th>タグ名</th><th>プロパティ名</th><th>説明</th></tr>
+                <tr><td>graphics</td><td></td><td>ルートノード.<br />このノード内にグラフィックに関するノードが含まれます.</td></tr>
+                <tr><td></td><td>directory</td><td>このプログラムの実行ファイルから、画像ファイルがあるディレクトリの相対パス.<br />絶対パスでも可能だが推奨されない.</td></tr>
+                <tr><td>simple</td><td></td><td>サブノード.<br />単一のグラフィックを示す.<br />要素として、グラフィックのファイル名が記述される.</td></tr>
+                <tr><td></td><td>id</td><td>この単一のグラフィックのIDを示す</td></tr>
+                <tr><td>division</td><td></td><td>サブノード.<br />分割される１枚のグラフィックを示す.<br />要素として、グラフィックのファイル名が記述される.</td></tr>
+                <tr><td></td><td>id</td><td>この分割グラフィックのIDを示す</td></tr>
+                <tr><td></td><td>x</td><td>x方向の分割数を示す.</td></tr>
+                <tr><td></td><td>y</td><td>y方向の分割数を示す.</td></tr>
+                <tr><td></td><td>all</td><td>x 方向, 及び y 方向の分割数の総計.<br />このとき、allは次の条件を満たす. all &lt;= x * y</td></tr>
+                <tr><td></td><td>width</td><td>分割されたグラフィック1枚の幅. ピクセル単位.</td></tr>
+                <tr><td></td><td>height</td><td>分割されたグラフィック1枚の高さ. ピクセル単位.</td></tr>
+                <tr><td>animation</td><td></td><td>サブノード.<br />アニメーションを示す.<br />基本的にはdivisionと同じプロパティを持つが、<b>ランタイムライブラリでの実行時の挙動が異なる.</b><br />アニメーションとして指定されたグラフィックは自動再生するようにプログラムされる.</td></tr>
+                <tr><td></td><td>interval</td><td>アニメーションを切り替えるフレーム間隔</td></tr>
+            </table>
+
+            <!--全く不要だがcopyright表記-->
+            <p><br /></p>
+            <hr />
+            <p class="copyright">copyright (C) 2011 krustf</p>
+        </div>
+        <!--本文-->
+    </div>
+</body>
+</html>
