@@ -2,3 +2,23 @@ AnimationMaker ver.0.11
 
 Required SlimDX September 2011 Runtime.
 http://slimdx.org/download.php
+
+use .NET Framework 2.0
+
+[How to AnimationMaker]
+
+ゲーム等で画像を読み込むのが面倒だったのでそれだったら自動化できるようにと
+作ったXMLを出力するC# アプリケーションです。
+
+XMLのフォーマットは決まってるので、DirectXだろうがDxLibだろうがOpenGLだろうが
+ゲームアプリ側でファイルを読み込んだら、そのデータを上手く使ってテクスチャクラス
+なりを作るライブラリ書けば使えるようになります。
+
+ちなみにこのライブラリ側で用意しているのはC++, DxLib用の読み込みとテクスチャ
+クラスを提供しているだけです。
+
+XMLフォーマットなど詳しい話はPackage/helpにドキュメントがあります。
+
+[Support]
+  Twitter : @krustf
+  email   : krustf.cpp.u@gmail.com
