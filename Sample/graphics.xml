@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<graphics directory="./graphics/">
+    <animation id="animation1" interval="10" x="10" y="1" all="10" width="31" height="40">suuzi.png</animation>
+    <entry id="simple1">graph.png</entry>
+</graphics>
