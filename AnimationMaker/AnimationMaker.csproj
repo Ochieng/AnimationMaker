@@ -67,7 +67,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="D3DHelper.cs" />
+    <Compile Include="ViewWindow.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

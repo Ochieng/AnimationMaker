@@ -1,4 +1,4 @@
-﻿namespace DxLibGraphMaker
+﻿namespace AnimationMaker
 {
     partial class Main
     {
@@ -69,6 +69,11 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.selectBackGround = new System.Windows.Forms.Button();
             this.backGroundFile = new System.Windows.Forms.TextBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.rangeEnd = new System.Windows.Forms.NumericUpDown();
+            this.label13 = new System.Windows.Forms.Label();
+            this.rangeBegin = new System.Windows.Forms.NumericUpDown();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.DivPanel.SuspendLayout();
@@ -80,6 +85,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.animationFrame)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rangeEnd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rangeBegin)).BeginInit();
             this.SuspendLayout();
             // 
             // GraphicList
@@ -120,7 +128,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(788, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(864, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -235,7 +243,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label3.Location = new System.Drawing.Point(63, 235);
+            this.label3.Location = new System.Drawing.Point(90, 235);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 24);
             this.label3.TabIndex = 33;
@@ -245,7 +253,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label4.Location = new System.Drawing.Point(79, 203);
+            this.label4.Location = new System.Drawing.Point(106, 203);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(74, 24);
             this.label4.TabIndex = 32;
@@ -253,7 +261,7 @@
             // 
             // ImgWidth
             // 
-            this.ImgWidth.Location = new System.Drawing.Point(157, 203);
+            this.ImgWidth.Location = new System.Drawing.Point(184, 203);
             this.ImgWidth.Name = "ImgWidth";
             this.ImgWidth.ReadOnly = true;
             this.ImgWidth.Size = new System.Drawing.Size(56, 23);
@@ -262,7 +270,7 @@
             // 
             // ImgHeight
             // 
-            this.ImgHeight.Location = new System.Drawing.Point(157, 236);
+            this.ImgHeight.Location = new System.Drawing.Point(184, 236);
             this.ImgHeight.Name = "ImgHeight";
             this.ImgHeight.ReadOnly = true;
             this.ImgHeight.Size = new System.Drawing.Size(56, 23);
@@ -272,7 +280,7 @@
             // SaveButton
             // 
             this.SaveButton.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.SaveButton.Location = new System.Drawing.Point(3, 271);
+            this.SaveButton.Location = new System.Drawing.Point(30, 271);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(74, 55);
             this.SaveButton.TabIndex = 9;
@@ -283,7 +291,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button3.Location = new System.Drawing.Point(83, 271);
+            this.button3.Location = new System.Drawing.Point(110, 271);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(130, 25);
             this.button3.TabIndex = 7;
@@ -295,7 +303,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label5.Location = new System.Drawing.Point(23, 48);
+            this.label5.Location = new System.Drawing.Point(50, 48);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(31, 24);
             this.label5.TabIndex = 21;
@@ -303,7 +311,7 @@
             // 
             // ID_Name
             // 
-            this.ID_Name.Location = new System.Drawing.Point(54, 48);
+            this.ID_Name.Location = new System.Drawing.Point(81, 48);
             this.ID_Name.Name = "ID_Name";
             this.ID_Name.Size = new System.Drawing.Size(159, 23);
             this.ID_Name.TabIndex = 2;
@@ -316,7 +324,7 @@
             "単一グラフィック",
             "分割グラフィック",
             "アニメーション"});
-            this.comboBox1.Location = new System.Drawing.Point(3, 0);
+            this.comboBox1.Location = new System.Drawing.Point(30, 0);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(210, 31);
             this.comboBox1.TabIndex = 1;
@@ -380,7 +388,7 @@
             // CanselButton
             // 
             this.CanselButton.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.CanselButton.Location = new System.Drawing.Point(83, 301);
+            this.CanselButton.Location = new System.Drawing.Point(110, 301);
             this.CanselButton.Name = "CanselButton";
             this.CanselButton.Size = new System.Drawing.Size(130, 25);
             this.CanselButton.TabIndex = 8;
@@ -396,7 +404,7 @@
             this.DivPanel.Controls.Add(this.label8);
             this.DivPanel.Controls.Add(this.DivCount);
             this.DivPanel.Controls.Add(this.label9);
-            this.DivPanel.Location = new System.Drawing.Point(20, 77);
+            this.DivPanel.Location = new System.Drawing.Point(47, 77);
             this.DivPanel.Name = "DivPanel";
             this.DivPanel.Size = new System.Drawing.Size(193, 100);
             this.DivPanel.TabIndex = 3;
@@ -417,7 +425,7 @@
             this.DataPanel.Controls.Add(this.ImgWidth);
             this.DataPanel.Location = new System.Drawing.Point(421, 34);
             this.DataPanel.Name = "DataPanel";
-            this.DataPanel.Size = new System.Drawing.Size(221, 326);
+            this.DataPanel.Size = new System.Drawing.Size(269, 326);
             this.DataPanel.TabIndex = 35;
             this.DataPanel.Visible = false;
             // 
@@ -425,7 +433,7 @@
             // 
             this.groupBox1.Controls.Add(this.GraphicList);
             this.groupBox1.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.groupBox1.Location = new System.Drawing.Point(640, 34);
+            this.groupBox1.Location = new System.Drawing.Point(706, 34);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(146, 437);
             this.groupBox1.TabIndex = 36;
@@ -638,19 +646,84 @@
             this.backGroundFile.TabStop = false;
             this.backGroundFile.TextChanged += new System.EventHandler(this.backGroundFile_TextChanged);
             // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.label12);
+            this.groupBox5.Controls.Add(this.rangeEnd);
+            this.groupBox5.Controls.Add(this.label13);
+            this.groupBox5.Controls.Add(this.rangeBegin);
+            this.groupBox5.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.groupBox5.Location = new System.Drawing.Point(560, 367);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(130, 104);
+            this.groupBox5.TabIndex = 51;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Range";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label12.Location = new System.Drawing.Point(9, 63);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(42, 24);
+            this.label12.TabIndex = 44;
+            this.label12.Text = "End";
+            // 
+            // rangeEnd
+            // 
+            this.rangeEnd.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.rangeEnd.Location = new System.Drawing.Point(58, 63);
+            this.rangeEnd.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.rangeEnd.Name = "rangeEnd";
+            this.rangeEnd.Size = new System.Drawing.Size(60, 23);
+            this.rangeEnd.TabIndex = 43;
+            this.rangeEnd.TabStop = false;
+            this.rangeEnd.ValueChanged += new System.EventHandler(this.rangeEnd_ValueChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label13.Location = new System.Drawing.Point(9, 25);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(43, 24);
+            this.label13.TabIndex = 42;
+            this.label13.Text = "Beg";
+            // 
+            // rangeBegin
+            // 
+            this.rangeBegin.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.rangeBegin.Location = new System.Drawing.Point(58, 25);
+            this.rangeBegin.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.rangeBegin.Name = "rangeBegin";
+            this.rangeBegin.Size = new System.Drawing.Size(60, 23);
+            this.rangeBegin.TabIndex = 41;
+            this.rangeBegin.TabStop = false;
+            this.rangeBegin.ValueChanged += new System.EventHandler(this.rangeBegin_ValueChanged);
+            // 
             // Main
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(788, 482);
+            this.ClientSize = new System.Drawing.Size(864, 482);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.DrawablePanel);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.DataPanel);
@@ -682,6 +755,10 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rangeEnd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rangeBegin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -742,6 +819,11 @@
         private System.Windows.Forms.TextBox backGroundFile;
         private System.Windows.Forms.Button selectBackGround;
         private System.Windows.Forms.NumericUpDown animationFrame;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.NumericUpDown rangeEnd;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.NumericUpDown rangeBegin;
     }
 }
 

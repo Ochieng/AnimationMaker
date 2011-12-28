@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DxLibGraphMaker.Properties {
+namespace AnimationMaker.Properties {
     using System;
     
     
