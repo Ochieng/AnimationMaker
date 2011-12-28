@@ -160,7 +160,7 @@ private:
 };
 
 // implを使って描画する
-class handle : private safe_bool<handle> {
+class handle : private safe_bool<> {
 public:
 	using safe_bool_type::operator bool_type;
 
@@ -218,7 +218,7 @@ bool is_division(handle const& i) {
 }
 
 // 上記のhandleをリスト化して管理
-class handle_list : private safe_bool<handle_list>
+class handle_list : private safe_bool<>
 	              , private boost::noncopyable
 {
 public:

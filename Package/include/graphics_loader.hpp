@@ -5,12 +5,12 @@
 	graphics_loader.hpp - krustf
 
 	[概要]
-	AnimationCreator(仮)で作られた画像リスト郡を
+	AnimationMakerで作られた画像リスト郡を
 	C++で読み込むライブラリ
 
 	[推奨環境] - 作成環境と同義
-	Boost C++ Libraries 1.47.0
-	DxLib ver 3.06c
+	Boost C++ Libraries 1.48.0
+	DxLib ver 3.06d
 
 	[免責]
 	当ライブラリを利用した際におけるトラブル等に対し

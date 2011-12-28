@@ -164,8 +164,6 @@ handle_list load(std::string const& xmlFilePath)
 					insert_division(i.second,dir,lst);
 				else if(is_animation_node(i.first))
 					insert_animation(i.second,dir,lst);
-				else
-					BOOST_ASSERT("internal error. - node name no matching." && 0);
 			};
 		boost::for_each(subpt,push_handles);
 	}
