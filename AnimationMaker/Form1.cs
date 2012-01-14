@@ -356,6 +356,8 @@ public partial class Main : Form
             X_Div.Text = dat.xnum.ToString();
             Y_Div.Text = dat.ynum.ToString();
             DivCount.Text = dat.allnum.ToString();
+			rangeBegin.Value = (decimal)dat.begin;
+			rangeEnd.Value = (decimal)dat.end;
             window.LoadTexture(img);
             dataUISets(1, false);
         } else if (g is AnimationGraphic) {
@@ -366,6 +368,8 @@ public partial class Main : Form
             X_Div.Text = dat.xnum.ToString();
             Y_Div.Text = dat.ynum.ToString();
             DivCount.Text = dat.allnum.ToString();
+			rangeBegin.Value = (decimal)dat.begin;
+			rangeEnd.Value = (decimal)dat.end;
             animationFrame.Text = dat.interval.ToString();
             dataUISets(2, true);
         }
@@ -478,8 +482,9 @@ public partial class Main : Form
             MessageBox.Show("総分割数に整数以外が指定されています。");
         else
             return GraphicsUtil.createGraph(
-                x, y, all, int.Parse(ImgWidth.Text), int.Parse(ImgHeight.Text)
-                , ID_Name.Text, imagePath
+				x, y, all, (int)rangeBegin.Value, (int)rangeEnd.Value,
+				int.Parse(ImgWidth.Text), int.Parse(ImgHeight.Text),
+                ID_Name.Text, imagePath
             );
         return null;
     }
@@ -500,8 +505,9 @@ public partial class Main : Form
             MessageBox.Show("アニメーションのフレーム間隔に整数以外が指定されています。");
         else
             return GraphicsUtil.createGraph(
-                interval, x, y, all, int.Parse(ImgWidth.Text), int.Parse(ImgHeight.Text)
-                , ID_Name.Text, imagePath
+                interval, x, y, all, (int)rangeBegin.Value, (int)rangeEnd.Value,
+				int.Parse(ImgWidth.Text), int.Parse(ImgHeight.Text),
+                ID_Name.Text, imagePath
             );
         return null;
     }
@@ -645,7 +651,7 @@ public partial class Main : Form
     {
         // 分割数総計が弄られた場合のみ範囲を初期化する
         rangeBegin.Value = 0;
-        rangeEnd.Value = int.Parse(DivCount.Text);
+		rangeEnd.Value = DivCount.Text == "" ? 0 : decimal.Parse(DivCount.Text);
         checkStartAnimation();
     }
 

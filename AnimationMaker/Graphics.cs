@@ -84,20 +84,20 @@ static class GraphicsUtil
     }
 
     // 分割グラフィックを生成
-    static public DivGraphic createGraph(int x, int y, int all, int w, int h, string id, string path)
+    static public DivGraphic createGraph(int x, int y, int all, int beg, int end, int w, int h, string id, string path)
     {
         if (x * y < all)
             return null;
-        var dat = new DivGraphic.Parameter(x, y, all, new Size(w, h));
+        var dat = new DivGraphic.Parameter(x, y, all, beg, end, new Size(w, h));
         return new DivGraphic(id, path, dat);
     }
 
     // アニメーションを生成
-    static public AnimationGraphic createGraph(int interval, int x, int y, int all, int w, int h, string id, string path)
+    static public AnimationGraphic createGraph(int interval, int x, int y, int all, int beg, int end, int w, int h, string id, string path)
     {
         if (x * y < all)
             return null;
-        var dat = new AnimationGraphic.Parameter(interval, x, y, all, new Size(w, h));
+        var dat = new AnimationGraphic.Parameter(interval, x, y, all, beg, end, new Size(w, h));
         return new AnimationGraphic(id, path, dat);
     }
 }
@@ -186,16 +186,20 @@ public class DivGraphic : GraphBase
 {
     public struct Parameter
     {
-        public Parameter(int _xnum, int _ynum, int _allnum, Size _size)
+        public Parameter(int _xnum, int _ynum, int _allnum, int _beg, int _end, Size _size)
         {
             xnum = _xnum;
             ynum = _ynum;
             allnum = _allnum;
+			begin = _beg;
+			end = _end;
             size = _size;
         }
         public int xnum;
         public int ynum;
         public int allnum;
+		public int begin;
+		public int end;
         public Size size;
     }
 
@@ -222,6 +226,8 @@ public class DivGraphic : GraphBase
         WriteAttribute(writer, "x", Dat.xnum.ToString());
         WriteAttribute(writer, "y", Dat.ynum.ToString());
         WriteAttribute(writer, "all", Dat.allnum.ToString());
+		WriteAttribute(writer, "begin", Dat.begin.ToString());
+		WriteAttribute(writer, "end", Dat.end.ToString());
         WriteAttribute(writer, "width", Dat.size.Width.ToString());
         WriteAttribute(writer, "height", Dat.size.Height.ToString());
         // ノードの文字列
@@ -244,6 +250,12 @@ public class DivGraphic : GraphBase
         xr.MoveToAttribute("all"); // all 属性
         int all = int.Parse(xr.Value);
         xr.MoveToElement();
+		xr.MoveToAttribute("begin"); // begin 属性
+		int beg = int.Parse(xr.Value);
+		xr.MoveToElement();
+		xr.MoveToAttribute("end"); // end 属性
+		int end = int.Parse(xr.Value);
+		xr.MoveToElement();
         xr.MoveToAttribute("width"); // width 属性
         int w = int.Parse(xr.Value);
         xr.MoveToElement();
@@ -251,7 +263,7 @@ public class DivGraphic : GraphBase
         int h = int.Parse(xr.Value);
         xr.MoveToElement();
         string path = xr.ReadString();
-        return new DivGraphic(id, dir + path, new DivGraphic.Parameter(x, y, all, new Size(w, h)));
+        return new DivGraphic(id, dir + path, new DivGraphic.Parameter(x, y, all, beg, end, new Size(w, h)));
     }
 
     private string Name;       // グラフの画像ファイルパス
@@ -263,18 +275,22 @@ public class AnimationGraphic : GraphBase
 {
     public struct Parameter
     {
-        public Parameter(int _interval, int _xnum, int _ynum, int _allnum, Size _size)
+        public Parameter(int _interval, int _xnum, int _ynum, int _allnum, int _beg, int _end, Size _size)
         {
             interval = _interval;
             xnum = _xnum;
             ynum = _ynum;
             allnum = _allnum;
+			begin = _beg;
+			end = _end;
             size = _size;
         }
         public int interval;
         public int xnum;
         public int ynum;
         public int allnum;
+		public int begin;
+		public int end;
         public Size size;
     }
 
@@ -302,6 +318,8 @@ public class AnimationGraphic : GraphBase
         WriteAttribute(writer, "x", Dat.xnum.ToString());
         WriteAttribute(writer, "y", Dat.ynum.ToString());
         WriteAttribute(writer, "all", Dat.allnum.ToString());
+		WriteAttribute(writer, "begin", Dat.begin.ToString());
+		WriteAttribute(writer, "end", Dat.end.ToString());
         WriteAttribute(writer, "width", Dat.size.Width.ToString());
         WriteAttribute(writer, "height", Dat.size.Height.ToString());
         // ノードの文字列
@@ -326,6 +344,12 @@ public class AnimationGraphic : GraphBase
         xr.MoveToElement();
         xr.MoveToAttribute("all"); // all 属性
         int all = int.Parse(xr.Value);
+		xr.MoveToElement();
+		xr.MoveToAttribute("begin"); // begin 属性
+		int beg = int.Parse(xr.Value);
+		xr.MoveToElement();
+		xr.MoveToAttribute("end"); // end 属性
+		int end = int.Parse(xr.Value);
         xr.MoveToElement();
         xr.MoveToAttribute("width"); // width 属性
         int w = int.Parse(xr.Value);
@@ -334,7 +358,7 @@ public class AnimationGraphic : GraphBase
         int h = int.Parse(xr.Value);
         xr.MoveToElement();
         string path = xr.ReadString();
-        return new AnimationGraphic(id, dir + path, new AnimationGraphic.Parameter(interval, x, y, all, new Size(w, h)));
+        return new AnimationGraphic(id, dir + path, new AnimationGraphic.Parameter(interval, x, y, all, beg, end, new Size(w, h)));
     }
 
     private string  Name;       // グラフの画像ファイルパス

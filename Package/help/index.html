@@ -5,11 +5,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Style-Type" content="text/css" />
     <link rel="Stylesheet" href="./page/config.css" type="text/css" />
-    <title>AnimationMaker ver 0.11 (bug exists) - Utility Document</title>
+    <title>AnimationMaker ver 0.12 (bug exists) - Utility Document</title>
 </head>
 <body>
     <div id="wrapper">
-        <h1>AnimationMaker ver 0.11 (bug exists) - Utility Document</h1>
+        <h1>AnimationMaker ver 0.12 (bug exists) - Utility Document</h1>
     
         <!--このページのリスト-->
         <ol id="sidelist">
@@ -81,7 +81,7 @@
             <p>
             現在のバージョンでは特に規定しておりません.<br />
             ライセンスフリーでご利用ください.<br />
-            <a href="#contact">に報告していただくと喜びます.</a>
+            <a href="#contact">作成者</a>に報告していただくと喜びます.
             </p>
 
             <!--免責事項-->
@@ -124,6 +124,8 @@
                 <tr><td></td><td>x</td><td>x方向の分割数を示す.</td></tr>
                 <tr><td></td><td>y</td><td>y方向の分割数を示す.</td></tr>
                 <tr><td></td><td>all</td><td>x 方向, 及び y 方向の分割数の総計.<br />このとき、allは次の条件を満たす. all &lt;= x * y</td></tr>
+                <tr><td></td><td>begin</td><td>分割された画像に対し, どの分割位置からこのIDでは利用するのかを指定する.<br />このとき, beginは次の条件を満たす. 0 &lt;= begin &amp;&amp; begin &lt;= end</td></tr>
+                <tr><td></td><td>end</td><td>分割された画像に対し, どの分割位置までこのIDでは利用するのかを指定する.<br />このとき, endは次の条件を満たす. begin &lt;= end &amp;&amp; end &lt;= all</td></tr>
                 <tr><td></td><td>width</td><td>分割されたグラフィック1枚の幅. ピクセル単位.</td></tr>
                 <tr><td></td><td>height</td><td>分割されたグラフィック1枚の高さ. ピクセル単位.</td></tr>
                 <tr><td>animation</td><td></td><td>サブノード.<br />アニメーションを示す.<br />基本的にはdivisionと同じプロパティを持つが、<b>ランタイムライブラリでの実行時の挙動が異なる.</b><br />アニメーションとして指定されたグラフィックは自動再生するようにプログラムされる.</td></tr>
@@ -133,7 +135,7 @@
             <!--全く不要だがcopyright表記-->
             <p><br /></p>
             <hr />
-            <p class="copyright">copyright (C) 2011 krustf</p>
+            <p class="copyright">copyright (C) 2012 krustf</p>
         </div>
         <!--本文-->
     </div>
