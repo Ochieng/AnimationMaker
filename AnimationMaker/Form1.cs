@@ -24,6 +24,8 @@ public partial class Main : Form
 	private string imagePath = null;
 	// 描画を担う
 	private ViewWindow window = null;
+	// リストで前回選択されていたインデックス
+	int graphicListSelectedBefore = -1;
 
 	private Bitmap img
 	{
@@ -325,8 +327,9 @@ public partial class Main : Form
 	{
 		string id = (string)GraphicList.SelectedItem;
 		GraphBase g = list.Find(i => i.ToString() == id);
-		if (g != null)
+		if (g != null) {
 			dataSets(g);
+		}
 	}
 
 	// イメージに対するデータを設定
@@ -376,7 +379,6 @@ public partial class Main : Form
 	}
 
 	// リストの選択が変更されたら
-	int graphicListSelectedBefore = -1; // 前回選択されていたインデックス
 	private void GraphicList_SelectedIndexChanged(object sender, EventArgs e)
 	{
 		if (GraphicList.SelectedIndex > -1) {
